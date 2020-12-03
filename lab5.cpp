@@ -6,16 +6,15 @@
 std::vector< char > foo(std::list< Human >& people)
 {
     std::vector< char > tmp;
-
     std::list< Human >::reverse_iterator rit = people.rbegin();
     while (rit != people.rend()) {
         rit->birthday();
         std::cout << rit->wiek() << "\n";
-        if (rit->isMonster()) {
-            tmp.push_back('y');
+        if (rit->isMonster() == true) {
+            tmp.push_back('n');
         }
         else {
-            tmp.push_back('n');
+            tmp.push_back('y');
         }
         *rit++;
     }
@@ -24,18 +23,20 @@ std::vector< char > foo(std::list< Human >& people)
 
 int main()
 {
-    std::list< Human >                   people;
-    std::list< Human >::reverse_iterator rit = people.rbegin();
+    std::list< Human >           people;
+    std::list< Human >::iterator it = people.begin();
     people.push_back(Human("Mark", 20, false, true));
-    people.push_back(Human("John", 26, false, true));
-    people.push_back(Human("Bob", 26, false, false));
+    people.push_back(Human("John", 32, false, true));
+    people.push_back(Human("Bob", 50, false, false));
+    people.push_back(Human("Jack", 30, true, false));
 
+    *it++;
     std::vector< char > wektor;
     wektor = foo(people);
     for (int i = 0; i < wektor.size(); i++) {
         std::cout << wektor[i] << "\n";
-        std::cout << rit->wiek() << "\n";
-        *rit++;
+        std::cout << it->wiek() << "\n";
+        *it++;
     }
     /*
        std::list< int >           L;
