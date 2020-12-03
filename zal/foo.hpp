@@ -9,17 +9,17 @@ std::vector< char > foo(std::list< Human >& people)
 {
   std::vector<char> tmp;
   std::list< Human >::iterator it = people.begin();
-  int iter =0;
-while( it != people.end() && iter <1000)
+
+while( it != people.end())
 {
   it->birthday();
   if ( it-> isMonster())
   {
-    tmp.push_back('y');
+    tmp.push_back('n');
   }
   else 
   {
-    tmp.push_back('n');
+    tmp.push_back('y');
   }
   *it++
 }
