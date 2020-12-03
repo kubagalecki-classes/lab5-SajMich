@@ -8,9 +8,9 @@
 std::vector< char > foo(std::list< Human >& people)
 {
   std::vector<char> tmp;
-  std::list< Human >::iterator it = people.begin();
+  std::list< Human >::reverse_iterator it = people.rbegin();
 
-while( it != people.end())
+while( it != people.rend())
 {
   it->birthday();
   if ( it-> isMonster())
