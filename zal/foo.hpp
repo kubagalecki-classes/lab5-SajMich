@@ -15,11 +15,11 @@ while( it != people.rend())
   it->birthday();
   if ( it-> isMonster())
   {
-    tmp.push_back('n');
+    tmp.push_back('y');
   }
   else 
   {
-    tmp.push_back('y');
+    tmp.push_back('n');
   }
   *it++
 }
